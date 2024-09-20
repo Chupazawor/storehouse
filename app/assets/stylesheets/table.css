@@ -1,0 +1,11 @@
+.table-border {
+  border: solid 1px gray;
+}
+
+.table-margin {
+  margin: 10px;
+}
+
+.table-padding {
+  padding: 5px;
+}

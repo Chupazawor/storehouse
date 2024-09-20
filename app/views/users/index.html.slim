@@ -1,0 +1,17 @@
+table.table-border.table-margin.table-padding
+  thead
+    td First Name
+    td Last Name
+    td Email
+    td Confirmed
+    td Registered
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.first_name
+        td = user.last_name
+        td = user.email
+        td
+          input type='checkbox' checked="#{user.confirmed?}"
+        td = user.created_at.strftime('%m/%d/%Y, %H:%M')
+        td = link_to "Delete #{full_name(user.first_name, user.last_name)}", user_path(user.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
