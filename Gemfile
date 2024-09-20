@@ -40,4 +40,8 @@ gem 'mailcatcher'
 gem 'rubocop'
 gem 'slim'
 
-gem 'byebug', '~> 11.1', groups: %i[development test]
+gem 'byebug', groups: %i[development test]
+
+gem "acts_as_paranoid"
+
+gem "unicorn", "~> 6.1"
