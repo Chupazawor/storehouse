@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 ruby '3.3.0'
 
-gem 'rails'
-gem 'sprockets-rails'
 gem 'pg'
 gem 'puma'
+gem 'rails'
+gem 'sprockets-rails'
 
 gem 'importmap-rails'
-gem 'turbo-rails'
-gem 'stimulus-rails'
 gem 'jbuilder'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
@@ -39,3 +39,5 @@ gem 'devise'
 gem 'mailcatcher'
 gem 'rubocop'
 gem 'slim'
+
+gem 'byebug', '~> 11.1', groups: %i[development test]
