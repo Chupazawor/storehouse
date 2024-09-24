@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   devise_for :users
-  resources :users, only: %i[index destroy]
+  resources :admin_user, only: %i[show update]
+  resources :users do
+    resource :user_profile, only: %i[show update]
+  end
 end

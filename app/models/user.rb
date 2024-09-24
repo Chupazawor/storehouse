@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true, length: { in: 3..20 }
   validates :email, length: { maximum: 50 }, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
+  has_one :user_profile, dependent: :destroy
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
 
   scope :active, -> { where.not(confirmed_at: nil) }
