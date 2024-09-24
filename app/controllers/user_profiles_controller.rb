@@ -4,6 +4,14 @@ class UserProfilesController < ApplicationController
     @user_profile = @user.user_profile
   end
 
+  def create
+    if UserProfile.create(**permitted_attributes, user_id: params[:user_id])
+      redirect_to user_user_profile_path(params[:user_id])
+    else
+      redirect_to user_user_profile_path(params[:user_id]), error: 'Error while creating User Profile'
+    end
+  end
+
   def update
     @user_profile = User.find(params[:user_id]).user_profile
     if @user_profile.update(permitted_attributes)

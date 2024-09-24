@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :admin_user, only: %i[show update]
   resources :users do
-    resource :user_profile, only: %i[show update]
+    resource :user_profile, only: %i[show create update]
   end
 end

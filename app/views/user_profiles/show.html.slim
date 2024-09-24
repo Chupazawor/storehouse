@@ -1,14 +1,26 @@
 table.table-border.table-margin.table-padding
-  tbody
-    = form_with model: [:user, @user_profile] do |form|
-      tr
-        td = form.label :address
-        td = form.text_field :address
-      tr
-        td = form.label :phone_number
-        td = form.phone_field :phone_number
-      tr
-        td = form.submit
+    tbody
+      - if @user_profile
+        = form_with model: [:user, @user_profile] do |form|
+          tr
+            td = form.label :address
+            td = form.text_field :address
+          tr
+            td = form.label :phone_number
+            td = form.phone_field :phone_number
+          tr
+            td = form.submit
+      - else
+        = form_with model: [:user, UserProfile.new], url: user_user_profile_path, method: :post do |form|
+          tr
+            td = form.label :address
+            td = form.text_field :address
+          tr
+            td = form.label :phone_number
+            td = form.phone_field :phone_number
+          tr
+            td = form.submit
+
 
 table.table-border.table-margin.table-padding
   tbody
