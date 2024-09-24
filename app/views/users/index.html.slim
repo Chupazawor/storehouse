@@ -1,5 +1,6 @@
 table.table-border.table-margin.table-padding
   thead
+    td ID
     td First Name
     td Last Name
     td Email
@@ -8,6 +9,7 @@ table.table-border.table-margin.table-padding
   tbody
     - @users.each do |user|
       tr
+        td = link_to(user.id, user_user_profile_path(user.id))
         td = user.first_name
         td = user.last_name
         td = user.email

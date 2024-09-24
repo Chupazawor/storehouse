@@ -1,0 +1,29 @@
+table.table-border.table-margin.table-padding
+  tbody
+    = form_with model: [:user, @user_profile] do |form|
+      tr
+        td = form.label :address
+        td = form.text_field :address
+      tr
+        td = form.label :phone_number
+        td = form.phone_field :phone_number
+      tr
+        td = form.submit
+
+table.table-border.table-margin.table-padding
+  tbody
+    = form_with model: @user do |form|
+      tr
+        td = form.label :first_name
+        td = form.text_field :first_name
+      tr
+        td = form.label :last_name
+        td = form.text_field :last_name
+      tr
+        td = form.label :password
+        td = form.password_field :password
+      tr
+        td = form.label :password_confirmation
+        td = form.password_field :password_confirmation
+      tr
+        td = form.submit
