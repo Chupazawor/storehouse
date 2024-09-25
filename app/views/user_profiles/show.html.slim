@@ -1,26 +1,30 @@
 table.table-border.table-margin.table-padding
-    tbody
-      - if @user_profile
-        = form_with model: [:user, @user_profile] do |form|
-          tr
-            td = form.label :address
-            td = form.text_field :address
-          tr
-            td = form.label :phone_number
-            td = form.phone_field :phone_number
-          tr
-            td = form.submit
-      - else
-        = form_with model: [:user, UserProfile.new], url: user_user_profile_path, method: :post do |form|
-          tr
-            td = form.label :address
-            td = form.text_field :address
-          tr
-            td = form.label :phone_number
-            td = form.phone_field :phone_number
-          tr
-            td = form.submit
+  tbody
+    - if @user_profile
+      = form_with model: [:user, @user_profile] do |form|
+        tr
+          td = form.label :address
+          td = form.text_field :address
+        tr
+          td = form.label :phone_number
+          td = form.phone_field :phone_number
+        tr
+          td = form.submit
+    - else
+      = form_with model: [:user, UserProfile.new], url: user_user_profile_path, method: :post do |form|
+        tr
+          td = form.label :address
+          td = form.text_field :address
+        tr
+          td = form.label :phone_number
+          td = form.phone_field :phone_number
+        tr
+          td = form.submit
 
+= link_to "Delete #{full_name(@user.first_name, @user.last_name)}", user_path(@user.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+'
+- if @user_profile
+  = link_to "Clear user profile", user_user_profile_path(@user.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
 
 table.table-border.table-margin.table-padding
   tbody

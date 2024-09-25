@@ -1,3 +1,6 @@
 = link_to 'Homepage', root_path
 '
-= link_to 'All Users', users_path
+- if admin_user?
+  = link_to 'All Users', users_path
+'
+= link_to 'User Profile', user_user_profile_path(current_user.id)
