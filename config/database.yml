@@ -80,5 +80,5 @@ test:
 production:
   <<: *default
   database: storehouse_production
-  username: dmatlakh
+  username: chupazawor
   password: <%= ENV["STOREHOUSE_DATABASE_PASSWORD"] %>
