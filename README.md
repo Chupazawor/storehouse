@@ -20,5 +20,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 Mailcatcher: `http://127.0.0.1:1080`
-
-* Deployment instructions
